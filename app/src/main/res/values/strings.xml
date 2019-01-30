@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">SemaTec_1</string>
+    <string-array name="quarters">
+        <item>First</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Four</item>
+    </string-array>
+    <array name="Months">
+        <item>January</item>
+        <item>Febrauary</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </array>
 </resources>
