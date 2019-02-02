@@ -6,13 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 
-import java.util.List;
-
-import static com.example.sematec_1.R.layout.list_quarters;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button registry= (Button)findViewById(R.id.registery);
+        registry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Register_activity.class);
                 startActivity(intent);
             }
         });
