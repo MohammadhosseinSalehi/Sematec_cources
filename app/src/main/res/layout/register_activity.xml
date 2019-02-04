@@ -17,7 +17,7 @@
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#aa0000"
-            android:text="Register Page"/>
+            android:text="@string/register_page"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,16 +27,16 @@
             android:layout_margin="15dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FirstName:"
-                android:textColor="#ff0000"
-                android:textSize="20sp" />
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/tv_size" />
             <EditText
                 android:id="@+id/firstName"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="@dimen/edt_size"
                 android:hint="please input your name"
                 android:gravity="center"
                 />
@@ -50,19 +50,19 @@
             android:layout_margin="15dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LastName:"
-                android:textColor="#ff0000"
-                android:textSize="20sp" />
+                android:text="LastName: "
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/tv_size" />
 
             <EditText
                 android:id="@+id/lastName"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:hint="please input your LastName"
-                android:textSize="20sp" />
+                android:textSize="@dimen/edt_size" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,16 +73,16 @@
             android:layout_margin="15dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Age:"
-                android:textColor="#ff0000"
-                android:textSize="20sp" />
+                android:text="Age: "
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/tv_size" />
             <EditText
                 android:id="@+id/age"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="@dimen/edt_size"
                 android:hint="please input your Age"
                 android:gravity="center"
                 />
@@ -96,16 +96,16 @@
             android:layout_margin="15dp">
 
             <TextView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mail:"
-                android:textColor="#ff0000"
-                android:textSize="20sp" />
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/tv_size" />
             <EditText
                 android:id="@+id/mail"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="@dimen/edt_size"
                 android:hint="please input your Mail"
                 android:gravity="center"
                 android:inputType="textEmailAddress"
@@ -123,17 +123,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PhoneNumber: "
-                android:textColor="#ff0000"
-                android:textSize="20sp" />
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/tv_size" />
 
             <EditText
                 android:id="@+id/phoneNumber"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:inputType="number"
                 android:hint="please input your Number"
-                android:textSize="20sp" />
+                android:textSize="@dimen/edt_size" />
         </LinearLayout>
         <Button
             android:id="@+id/register"
@@ -142,7 +142,7 @@
             android:gravity="center"
             android:layout_marginTop="15dp"
             android:layout_gravity="center"
-            android:text="Register"/>
+            android:text="@string/register_btn"/>
 
     </LinearLayout>
 

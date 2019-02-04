@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">SemaTec_1</string>
-    <string name="register_page">Register Page</string>
-    <string name="register_btn">Register</string>
-    <string name="register_accept_page">Register Accept Page</string>
-    <string name="accept_btn">Accept</string>
+    <string name="app_name">سماتک</string>
+    <string name="register_page">صفحه ثبت نام</string>
+    <string name="register_btn">ثبت نام</string>
+    <string name="register_accept_page">صفحه تایید اطلاعات</string>
+    <string name="accept_btn">تایید اطلاعات</string>
     <string name="show_information_tv">Show Information</string>
     <string-array name="quarters">
         <item>First</item>

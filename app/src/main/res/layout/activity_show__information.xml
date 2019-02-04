@@ -17,7 +17,7 @@
             android:textSize="30sp"
             android:gravity="center"
             android:textColor="#aa0000"
-            android:text="@string/register_accept_page"/>
+            android:text="@string/show_information_tv"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:textColor="@color/tv_color"
                 android:textSize="@dimen/tv_size" />
             <TextView
-                android:id="@+id/firstName1"
+                android:id="@+id/firstName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/edt_size"
@@ -57,7 +57,7 @@
                 android:textSize="@dimen/tv_size" />
 
             <TextView
-                android:id="@+id/lastName1"
+                android:id="@+id/lastName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -78,7 +78,7 @@
                 android:textColor="@color/tv_color"
                 android:textSize="@dimen/tv_size" />
             <TextView
-                android:id="@+id/age1"
+                android:id="@+id/age2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/edt_size"
@@ -100,7 +100,7 @@
                 android:textColor="@color/tv_color"
                 android:textSize="@dimen/tv_size" />
             <TextView
-                android:id="@+id/mail1"
+                android:id="@+id/mail2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/edt_size"
@@ -123,20 +123,13 @@
                 android:textSize="@dimen/tv_size" />
 
             <TextView
-                android:id="@+id/phoneNumber1"
+                android:id="@+id/phoneNumber2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="@dimen/edt_size" />
         </LinearLayout>
-        <Button
-            android:id="@+id/accept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"
-            android:text="@string/accept_btn"/>
+
 
     </LinearLayout>
 
