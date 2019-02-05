@@ -1,12 +1,16 @@
 package com.example.sematec_1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -30,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Register_activity.class);
-                startActivity(intent);
+                startActivityForResult(intent,100);
             }
         });
+
+
         final Button showInformation= (Button)findViewById(R.id.btn_showInformation);
         showInformation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100){
+            if(resultCode == Activity.RESULT_OK){
+
+                Toast.makeText(MainActivity.this,"It is a Activity Result",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"Hi "+ data.getStringExtra("ResultRegisteryActivity"),Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override

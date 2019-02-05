@@ -2,6 +2,7 @@ package com.example.sematec_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +32,13 @@ public class Register_activity extends AppCompatActivity {
                 intent.putExtra("age", age.getText().toString());
                 intent.putExtra("phoneNumber", phone.getText().toString());
                 intent.putExtra("mail", mail.getText().toString());
+
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("ResultRegisteryActivity",firstName.getText().toString());
+                setResult(Activity.RESULT_OK,resultIntent);
+
                 startActivity(intent);
+                finish();
             }
         });
 

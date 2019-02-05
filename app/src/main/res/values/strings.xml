@@ -5,6 +5,7 @@
     <string name="register_accept_page">Register Accept Page</string>
     <string name="accept_btn">Accept</string>
     <string name="show_information_tv">Show Information</string>
+    <string name="shared_pref_information">Shared Preferences Information</string>
     <string-array name="quarters">
         <item>First</item>
         <item>Second</item>
