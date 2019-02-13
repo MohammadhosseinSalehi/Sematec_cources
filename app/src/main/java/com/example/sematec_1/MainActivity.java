@@ -12,14 +12,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
-
+    List<String> userList ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("statussss: ", "onCreate");
+
+        Hawk.init(MainActivity.this).build();
+
         final Button newActivity= (Button)findViewById(R.id.newActivity);
         newActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +55,56 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        final Button recycler_btn= (Button)findViewById(R.id.recycler_btn);
+        recycler_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Hawk.count()== 0){
+                    Toast.makeText(MainActivity.this, "Hawk is empty",Toast.LENGTH_LONG).show();
+                }
+                else
+                 {
+
+                    String user = Hawk.get("userList_key");
+                    Hawk.delete("userList_key");
+                    if(userList==null){
+                        userList = new ArrayList<String>();
+                        if (user == null) {
+                            Toast.makeText(MainActivity.this, "User is Null", Toast.LENGTH_LONG).show();
+
+                        }else {
+                            userList.add(user);
+                            Hawk.put("List", userList);
+                            Toast.makeText(MainActivity.this, userList.toString(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
+                        if (user == null) {
+                            Toast.makeText(MainActivity.this, "User is Null", Toast.LENGTH_LONG).show();
+
+                        } else {
+                            userList.add(user);
+                            Hawk.put("List", userList);
+                            Toast.makeText(MainActivity.this, userList.toString(), Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+                }
+                Intent intent = new Intent(MainActivity.this,RecyclerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
+
+
+
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

@@ -5,6 +5,7 @@
     <string name="register_accept_page">صفحه تایید اطلاعات</string>
     <string name="accept_btn">تایید اطلاعات</string>
     <string name="show_information_tv">نمایش اطلاعات یوزر</string>
+    <string name="AddUser_btn">Add To Users</string>
     <string-array name="quarters">
         <item>First</item>
         <item>Second</item>

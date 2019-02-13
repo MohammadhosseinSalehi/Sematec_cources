@@ -12,7 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
+
 import java.security.AccessController;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AcceptRegistery extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class AcceptRegistery extends AppCompatActivity {
         final TextView tv_age = findViewById(R.id.age1);
         final TextView tv_phone = findViewById(R.id.phoneNumber1);
         final TextView tv_mail = findViewById(R.id.mail1);
+
+        //****************************HAWK LIBRARY*****************************
 
         Intent intent = getIntent();
         tv_firstName.setText(intent.getStringExtra("firstName"));
@@ -45,6 +51,9 @@ public class AcceptRegistery extends AppCompatActivity {
                 PreferenceManager.getDefaultSharedPreferences(AcceptRegistery.this).edit().putString("key_mail",tv_mail.getText().toString()).apply();
 
                 Toast.makeText(AcceptRegistery.this, PreferenceManager.getDefaultSharedPreferences(AcceptRegistery.this).getString("key_firstName","FirstName is empty") ,Toast.LENGTH_LONG).show();
+                Hawk.put("userList_key", tv_firstName.getText().toString());
+                Intent intent = new Intent(AcceptRegistery.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

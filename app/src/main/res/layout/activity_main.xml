@@ -28,4 +28,11 @@
         android:gravity="center"
         android:text="@string/shared_pref_information" />
 
+    <Button
+        android:id="@+id/recycler_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="RecyclerView and Hawk" />
+
 </LinearLayout>
