@@ -1,17 +1,19 @@
-package com.example.sematec_1;
+package com.example.sematec_1.Activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.sematec_1.R;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.ArrayList;
@@ -24,6 +26,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        final Button drawer_btn= (Button)findViewById(R.id.drawer_btn);
+        drawer_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!drawerLayout.isDrawerOpen(GravityCompat.START)){
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }else {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                }
+            }
+        });
+
         Log.d("statussss: ", "onCreate");
 
         Hawk.init(MainActivity.this).build();
@@ -92,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 Intent intent = new Intent(MainActivity.this,RecyclerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button azan_btn= (Button)findViewById(R.id.azan_btn);
+        azan_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AzanActivity.class);
                 startActivity(intent);
             }
         });

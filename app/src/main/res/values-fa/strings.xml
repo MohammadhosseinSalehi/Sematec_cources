@@ -5,7 +5,11 @@
     <string name="register_accept_page">صفحه تایید اطلاعات</string>
     <string name="accept_btn">تایید اطلاعات</string>
     <string name="show_information_tv">نمایش اطلاعات یوزر</string>
+    <string name="shared_pref_information">Shared Preferences Information</string>
     <string name="AddUser_btn">Add To Users</string>
+    <string name="Yes">بله</string>
+    <string name="No">خیر</string>
+    <string name="sematec_android_projects">Sematec_android_projects</string>
     <string-array name="quarters">
         <item>First</item>
         <item>Second</item>

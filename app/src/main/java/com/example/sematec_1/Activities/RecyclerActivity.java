@@ -1,4 +1,4 @@
-package com.example.sematec_1;
+package com.example.sematec_1.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,15 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sematec_1.Adapters.RecyclerAdapter;
+import com.example.sematec_1.R;
 import com.orhanobut.hawk.Hawk;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerActivity extends AppCompatActivity {

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sematec_1">
 
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET"></uses-permission-sdk-23>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecyclerActivity"></activity>
-        <activity android:name=".Show_Information" />
-        <activity android:name=".AcceptRegistery" />
-        <activity android:name=".Register_activity" />
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.AzanActivity">
+        </activity>
+        <activity android:name=".Activities.RecyclerActivity" />
+        <activity android:name=".Activities.Show_Information" />
+        <activity android:name=".Activities.AcceptRegistery" />
+        <activity android:name=".Activities.Register_activity" />
+        <activity android:name=".Activities.SecondActivity" />
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

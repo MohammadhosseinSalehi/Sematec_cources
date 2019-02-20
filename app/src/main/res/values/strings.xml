@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SemaTec_1</string>
+    <string name="app_name">SemaTec</string>
     <string name="register_page">Register Page</string>
     <string name="register_btn">Register</string>
     <string name="register_accept_page">Register Accept Page</string>
@@ -7,6 +7,9 @@
     <string name="show_information_tv">Show Information</string>
     <string name="shared_pref_information">Shared Preferences Information</string>
     <string name="AddUser_btn">Add To Users</string>
+    <string name="Yes">بله</string>
+    <string name="No">خیر</string>
+    <string name="sematec_android_projects">Sematec_android_projects</string>
     <string-array name="quarters">
         <item>First</item>
         <item>Second</item>
