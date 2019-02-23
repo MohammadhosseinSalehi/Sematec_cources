@@ -1,9 +1,17 @@
 package com.example.sematec_1.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import cz.msebera.android.httpclient.Header;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -101,7 +109,26 @@ public class AzanActivity extends AppCompatActivity {
 
         DataBaseHelper azanDB = new DataBaseHelper(AzanActivity.this,"azanTable",null,1);
         azanDB.insertToDB("mashhad","17:27");
-        Toast.makeText(AzanActivity.this,azanDB.getAzanTime(),Toast.LENGTH_LONG).show();
+        String s = azanDB.getAzanTime();
+        Toast.makeText(AzanActivity.this,s,Toast.LENGTH_LONG).show();
+
+
+        Intent intent = new Intent(getApplicationContext(),AzanActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationManager mNotificationManager= (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel mNotificationChannel = new NotificationChannel("default","insertData",NotificationManager.IMPORTANCE_DEFAULT);
+            mNotificationChannel.setDescription("Inserted Data");
+            mNotificationManager.createNotificationChannel(mNotificationChannel);
+        }
+        NotificationCompat.Builder mNotoficationBuilder = new NotificationCompat.Builder(getApplicationContext(),"Default")
+                .setSmallIcon(R.drawable.jan)
+                .setContentTitle("AzanTime")
+                .setContentText(city+s)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+        mNotificationManager.notify(0, mNotoficationBuilder.build());
     }
 }
 
