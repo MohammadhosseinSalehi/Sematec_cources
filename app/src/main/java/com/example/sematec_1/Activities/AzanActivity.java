@@ -1,24 +1,24 @@
 package com.example.sematec_1.Activities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+import cz.msebera.android.httpclient.Header;
 
-import android.Manifest;
-import android.content.DialogInterface;
-import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sematec_1.Adapters.DataBaseHelper;
 import com.example.sematec_1.R;
+import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -98,5 +98,52 @@ public class AzanActivity extends AppCompatActivity {
             }
         });
 
+
+        DataBaseHelper azanDB = new DataBaseHelper(AzanActivity.this,"azanTable",null,1);
+        azanDB.insertToDB("mashhad","17:27");
+        Toast.makeText(AzanActivity.this,azanDB.getAzanTime(),Toast.LENGTH_LONG).show();
     }
 }
+
+
+
+
+////////////////////////////////////
+
+/*new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+
+                    TextView azanTime_txt = findViewById(R.id.azanTime_tv);
+                    URL obj = new URL(url);
+                    HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+                    con.setRequestMethod("GET");
+                    con.setRequestProperty("User-Agent", "Mozilla/5.0");
+                    int responseCode = con.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        BufferedReader in = new BufferedReader(new InputStreamReader(
+                                con.getInputStream()));
+                        String inputLine;
+                        StringBuffer response = new StringBuffer();
+                        while ((inputLine = in.readLine()) != null) {
+                            response.append(inputLine);
+                        }
+                        JSONObject objResponse = new JSONObject(response.toString());
+                        String strData = objResponse.getString("data");
+                        JSONObject objData = new JSONObject(strData);
+                        String strTimings = objData.getString("timings");
+                        JSONObject objTimings = new JSONObject(strTimings);
+                        strMaghrib = objTimings.getString("Maghrib");
+                        System.out.print(strMaghrib);
+                    }else {
+
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }).start();*/
